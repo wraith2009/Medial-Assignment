@@ -10,7 +10,7 @@ const PostCard = ({ title, description, owner, votes, updatedAt, media, comments
   const currentUser = "user1";
 
   return (
-    <div className="post-card bg-slate-400 shadow-md w-[500px] max-h-[500px] min-w-[600px] rounded-lg py-1">
+    <div className="post-card bg-white shadow-md w-[500px] max-h-[500px]  rounded-lg py-1">
       
         <div className='flex gap-10 justify-between'>
           {owner && (
