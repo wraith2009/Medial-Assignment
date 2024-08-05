@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { AiOutlineLike, AiOutlineDislike } from 'react-icons/ai';
 import { FaRegComment } from 'react-icons/fa';
-import { Helmet } from "react-helmet"
+import { Helmet } from "react-helmet";
 
 const PostCard = ({ title, description, owner, votes, updatedAt, media, comments, category, _id }) => {
   const [userVote, setUserVote] = useState(null);
@@ -21,15 +20,18 @@ const PostCard = ({ title, description, owner, votes, updatedAt, media, comments
   const voteCount = votes.length;
   const commentCount = comments.length;
 
+  // Verify the media URL
+  console.log("Media URL:", media);
+
   return (
     <div className="post-card bg-[#13181d] shadow-md w-[500px] max-h-[500px] min-w-[600px] rounded-lg py-1">
-        <Helmet>
-            <meta property="og:title" content={title} />
-            <meta property="og:description" content={description} />
-            <meta property="og:image" content={media} />
-            <meta property="og:url" content="http://localhost:5173/" />
-            <meta property="og:type" content="website" />
-        </Helmet>
+      <Helmet>
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={media} />
+        <meta property="og:url" content={`https://medial-assignment-rb.vercel.app/posts/${_id}`} />
+        <meta property="og:type" content="website" />
+      </Helmet>
       <div className='hover:bg-[#2e2b2b] rounded-2xl py-4 px-8'>
         <div className='flex gap-10 justify-between'>
           {owner && (
@@ -45,14 +47,12 @@ const PostCard = ({ title, description, owner, votes, updatedAt, media, comments
               </div>
             </div>
           )}
-            <p className='text-sm text-white'>{category.name}</p>
-          
+          <p className='text-sm text-white'>{category.name}</p>
         </div>
         <div>
           <div>
-              <h2 className="text-xl font-bold text-white">{title}</h2>
-              <p className="text-[#9bb7b8]">{description}</p>
-
+            <h2 className="text-xl font-bold text-white">{title}</h2>
+            <p className="text-[#9bb7b8]">{description}</p>
             {media && (
               <div className="media mt-4 rounded-2xl border border-slate-200 flex justify-center">
                 <a href={media} target="_blank" rel="noopener noreferrer">
@@ -64,9 +64,9 @@ const PostCard = ({ title, description, owner, votes, updatedAt, media, comments
           <div className="text-sm text-gray-500 flex gap-10 mt-2">
             <div className='flex gap-2'>
               <div className={`flex rounded-full gap-1 cursor-pointer
-              ${userVoteType === null ? 'bg-[#222020]' : null}
-              ${userVoteType === "upvote" ? 'bg-green-500 text-white' : null}
-              ${userVoteType === "downvote" ? 'bg-red-500 text-white' : null}
+                ${userVoteType === null ? 'bg-[#222020]' : null}
+                ${userVoteType === "upvote" ? 'bg-green-500 text-white' : null}
+                ${userVoteType === "downvote" ? 'bg-red-500 text-white' : null}
               `}>
                 <AiOutlineLike
                   size={30}
@@ -75,26 +75,26 @@ const PostCard = ({ title, description, owner, votes, updatedAt, media, comments
                     ${userVoteType === "upvote" ? 'text-green-500 bg-green-300' : null}
                     ${userVoteType === "downvote" ? ' hover:bg-red-600' : null}
                     duration-200
-                    `}
+                  `}
                   onClick={() => handleVote("upvote")}
                 />
-                  <p className='text-xl'>{voteCount}</p>
+                <p className='text-xl'>{voteCount}</p>
                 <AiOutlineDislike
                   size={30}
                   className={`p-1 rounded-full
-                  ${userVoteType === null ? 'hover:text-red-600' : null}
-                  ${userVoteType === "downvote" ? 'text-red-500 bg-red-300' : null}
-                  ${userVoteType === "upvote" ? ' hover:bg-green-600' : null}
+                    ${userVoteType === null ? 'hover:text-red-600' : null}
+                    ${userVoteType === "downvote" ? 'text-red-500 bg-red-300' : null}
+                    ${userVoteType === "upvote" ? ' hover:bg-green-600' : null}
                     duration-200
                   `}
                   onClick={() => handleVote("downvote")}
                 />
               </div>
             </div>
-              <div className='flex bg-[#222020] rounded-full gap-1 cursor-pointer pr-1'>
-                <FaRegComment size={30} className='hover:text-blue-500 p-1 hover:bg-[#1c1a1a] rounded-full' />
-                <p className='text-xl'>{commentCount}</p>
-              </div>
+            <div className='flex bg-[#222020] rounded-full gap-1 cursor-pointer pr-1'>
+              <FaRegComment size={30} className='hover:text-blue-500 p-1 hover:bg-[#1c1a1a] rounded-full' />
+              <p className='text-xl'>{commentCount}</p>
+            </div>
             {
               currentUser === owner.userName &&
                 <div className='flex bg-[#222020] rounded-full gap-1 cursor-pointer pr-1'>
