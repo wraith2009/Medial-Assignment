@@ -26,9 +26,9 @@ const PostCard = ({ title, description, owner, votes, updatedAt, media, comments
   return (
     <div className="post-card bg-[#13181d] shadow-md w-[500px] max-h-[500px] min-w-[600px] rounded-lg py-1">
       <Helmet>
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:image" content={media} />
+        <meta property="og:title" content="Sample Post Title" />
+        <meta property="og:description" content="This is a sample post description." />
+        <meta property="og:image" content="https://via.placeholder.com/500x300" />
         <meta property="og:url" content={`https://medial-assignment-rb.vercel.app/posts/${_id}`} />
         <meta property="og:type" content="website" />
       </Helmet>
