@@ -9,29 +9,8 @@ const PostCard = ({ title, description, owner, votes, updatedAt, media, comments
   // Simulate current user data
   const currentUser = "user1";
 
-  // Find the user's vote type, if available
-  const userVoteType = votes.find(vote => vote.voteOwner === currentUser)?.voteType;
-
-  const handleVote = (type) => {
-    setUserVote(type);
-    // Handle vote logic here (e.g., update state, send to server)
-  };
-
-  const voteCount = votes.length;
-  const commentCount = comments.length;
-
-  // Verify the media URL
-  console.log("Media URL:", media);
-
   return (
     <div className="post-card bg-[#13181d] shadow-md w-[500px] max-h-[500px] min-w-[600px] rounded-lg py-1">
-      <Helmet>
-        <meta property="og:title" content="Sample Post Title" />
-        <meta property="og:description" content="This is a sample post description." />
-        <meta property="og:image" content="https://via.placeholder.com/500x300" />
-        <meta property="og:url" content={`https://medial-assignment-rb.vercel.app/posts/${_id}`} />
-        <meta property="og:type" content="website" />
-      </Helmet>
       <div className='hover:bg-[#2e2b2b] rounded-2xl py-4 px-8'>
         <div className='flex gap-10 justify-between'>
           {owner && (
@@ -61,50 +40,10 @@ const PostCard = ({ title, description, owner, votes, updatedAt, media, comments
               </div>
             )}
           </div>
-          <div className="text-sm text-gray-500 flex gap-10 mt-2">
-            <div className='flex gap-2'>
-              <div className={`flex rounded-full gap-1 cursor-pointer
-                ${userVoteType === null ? 'bg-[#222020]' : null}
-                ${userVoteType === "upvote" ? 'bg-green-500 text-white' : null}
-                ${userVoteType === "downvote" ? 'bg-red-500 text-white' : null}
-              `}>
-                <AiOutlineLike
-                  size={30}
-                  className={`p-1 rounded-full
-                    ${userVoteType === null ? 'hover:text-green-600' : null}
-                    ${userVoteType === "upvote" ? 'text-green-500 bg-green-300' : null}
-                    ${userVoteType === "downvote" ? ' hover:bg-red-600' : null}
-                    duration-200
-                  `}
-                  onClick={() => handleVote("upvote")}
-                />
-                <p className='text-xl'>{voteCount}</p>
-                <AiOutlineDislike
-                  size={30}
-                  className={`p-1 rounded-full
-                    ${userVoteType === null ? 'hover:text-red-600' : null}
-                    ${userVoteType === "downvote" ? 'text-red-500 bg-red-300' : null}
-                    ${userVoteType === "upvote" ? ' hover:bg-green-600' : null}
-                    duration-200
-                  `}
-                  onClick={() => handleVote("downvote")}
-                />
-              </div>
-            </div>
-            <div className='flex bg-[#222020] rounded-full gap-1 cursor-pointer pr-1'>
-              <FaRegComment size={30} className='hover:text-blue-500 p-1 hover:bg-[#1c1a1a] rounded-full' />
-              <p className='text-xl'>{commentCount}</p>
-            </div>
-            {
-              currentUser === owner.userName &&
-                <div className='flex bg-[#222020] rounded-full gap-1 cursor-pointer pr-1'>
-                  <p className='text-xl'>Edit</p>
-                </div>
-            }
           </div>
         </div>
       </div>
-    </div>
+  
   );
 };
 
