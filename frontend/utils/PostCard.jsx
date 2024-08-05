@@ -10,8 +10,8 @@ const PostCard = ({ title, description, owner, votes, updatedAt, media, comments
   const currentUser = "user1";
 
   return (
-    <div className="post-card bg-[#13181d] shadow-md w-[500px] max-h-[500px] min-w-[600px] rounded-lg py-1">
-      <div className='hover:bg-[#2e2b2b] rounded-2xl py-4 px-8'>
+    <div className="post-card bg-slate-400 shadow-md w-[500px] max-h-[500px] min-w-[600px] rounded-lg py-1">
+      
         <div className='flex gap-10 justify-between'>
           {owner && (
             <div className="owner-info flex items-center mb-4 gap-4 text-white">
@@ -26,7 +26,7 @@ const PostCard = ({ title, description, owner, votes, updatedAt, media, comments
               </div>
             </div>
           )}
-          <p className='text-sm text-white'>{category.name}</p>
+          
         </div>
         <div>
           <div>
@@ -42,7 +42,7 @@ const PostCard = ({ title, description, owner, votes, updatedAt, media, comments
           </div>
           </div>
         </div>
-      </div>
+      
   
   );
 };
