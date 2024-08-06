@@ -1,7 +1,7 @@
 // HomePage.jsx
 import React from "react";
-import PostCard from "../../utils/postCard.jsx";
-import PostData from "../../utils/postData.jsx";
+import PostCard from "../../utils/PostCard.jsx";
+import PostData from "../../utils/PostData"
 
 const HomePage = () => {
   const posts = PostData();

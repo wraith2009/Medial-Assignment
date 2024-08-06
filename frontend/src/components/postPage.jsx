@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import PostData from "../../utils/postData";
-import PostCard from "../../utils/postCard.jsx";
+import PostData from "../../utils/PostData.jsx";
+import PostCard from "../../utils/PostCard.jsx";
 import { Helmet } from "react-helmet";
 
 const PostPage = () => {
