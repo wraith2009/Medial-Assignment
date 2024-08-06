@@ -29,45 +29,8 @@ app.get("/", (req, res) => {
   res.send("Media Assignment");
 });
 
-app.get('/api/generate-html', async (req, res) => {
-  const { avatar, title, description, media, username, category, updatedAt } = req.query;
-  const truncateDescription = (description, maxLength = 50) => {
-    if (description.length > maxLength) {
-      return description.substring(0, maxLength) + "...";
-    }
-    return description;
-  };
-
-  const htmlContent = `
-    <html>
-      <body style="font-family: Arial, sans-serif; text-align: center; margin: 0; padding: 0; height: 630px; width: 1200px; overflow: hidden;">
-        <div style="position: relative; background-color: #13181d; color: white; padding: 20px; height: 630px; width: 1200px; box-sizing: border-box;">
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <div style="display: flex; align-items: center;">
-              <img src="${avatar}" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 20px;" />
-              <div style="text-align: left;">
-                <span style="font-size: 24px; font-weight: bold;">${username}</span>
-                <p style="font-size: 16px;">${new Date(updatedAt).toLocaleDateString()}</p>
-              </div>
-            </div>
-            <p style="font-size: 16px;">${category}</p>
-          </div>
-          <h1 style="margin-top: 20px; font-size: 32px; font-weight: bold;">${title}</h1>
-          <p style="font-size: 24px; color: #9bb7b8;">${truncateDescription(description)}</p>
-          <div style="margin-top: 20px; border: 1px solid #ccc; padding: 10px;">
-            <img src="${media}" style="max-width: 160px; height: auto;" />
-          </div>
-        </div>
-      </body>
-    </html>
-  `;
-
-  res.set('Content-Type', 'text/html');
-  res.send(htmlContent);
-});
-
 app.get('/api/generate-image', async (req, res) => {
-  const { avatar, title, description, media, username, category, updatedAt } = req.query;
+  const { avatar, title, description, media, username} = req.query;
   const truncateDescription = (description, maxLength = 50) => {
     if (description.length > maxLength) {
       return description.substring(0, maxLength) + "...";
@@ -75,29 +38,23 @@ app.get('/api/generate-image', async (req, res) => {
     return description;
   };
 
-  const htmlContent = `
-    <html>
-      <body style="font-family: Arial, sans-serif; text-align: center; margin: 0; padding: 0; height: 630px; width: 1200px; overflow: hidden;">
-        <div style="position: relative; background-color: #13181d; color: white; padding: 20px; height: 630px; width: 1200px; box-sizing: border-box;">
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <div style="display: flex; align-items: center;">
-              <img src="${avatar}" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 20px;" />
-              <div style="text-align: left;">
-                <span style="font-size: 24px; font-weight: bold;">${username}</span>
-                <p style="font-size: 16px;">${new Date(updatedAt).toLocaleDateString()}</p>
-              </div>
-            </div>
-            <p style="font-size: 16px;">${category}</p>
-          </div>
-          <h1 style="margin-top: 20px; font-size: 32px; font-weight: bold;">${title}</h1>
-          <p style="font-size: 24px; color: #9bb7b8;">${truncateDescription(description)}</p>
-          <div style="margin-top: 20px; border: 1px solid #ccc; padding: 10px;">
-            <img src="${media}" style="max-width: 160px; height: auto;" />
-          </div>
+
+const htmlContent = `
+  <html>
+    <body style="font-family: Arial, sans-serif; text-align: center; margin: 0; padding: 0; height: 630px; width: 1200px; overflow: hidden;">
+      <div style="position: relative; background-color: #13181d; color: white; height: 630px; width: 1200px; box-sizing: border-box;">
+        <div style="height: 60%; width: 100%;">
+          <img src="${media}" style="width: 100%; height: 100%; object-fit: cover;" />
         </div>
-      </body>
-    </html>
-  `;
+        <div>
+          <h1 style=" font-size: 32px; font-weight: bold;">${title}</h1>
+          <p style="font-size: 24px; color: #9bb7b8;">${truncateDescription(description)}</p>
+        </div>
+      </div>
+    </body>
+  </html>
+`;
+
 
   // Ensure the public directory exists
   const publicDir = path.join(__dirname, 'public');
@@ -118,7 +75,7 @@ app.get('/api/generate-image', async (req, res) => {
 
   await browser.close();
 
-  res.json({ imageUrl: `http://localhost:3000/og-image.png` });
+  res.json({ imageUrl: `http://localhost:4000/og-image.png` });
 });
 
 export { app };
