@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-  "postinstall": "npx puppeteer install"
+    "postinstall": "npx puppeteer install",
+    "build": "apt-get update && apt-get install -y chromium"
   },
   "author": "",
   "license": "ISC",
