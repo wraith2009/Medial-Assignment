@@ -4,10 +4,10 @@ const PostData = () => {
         title: "Sample Post Title 1",
         description: "This is a sample post description 1.",
         owner: {
-          userName: "John Doe",
-          avatar: "https://via.placeholder.com/40",
+          userName: "User 1",
+          avatar: "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671142.jpg",
         },
-        media: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fletsenhance.io%2F&psig=AOvVaw2fTVzDNY-peGMlccLi2TnP&ust=1723038555052000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCNjUpvnA4IcDFQAAAAAdAAAAABAE",
+        media: "https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg",
        
         _id: "post1",
       },
@@ -15,10 +15,10 @@ const PostData = () => {
         title: "Sample Post Title 2",
         description: "This is a sample post description 2.",
         owner: {
-          userName: "Jane Smith",
-          avatar: "https://via.placeholder.com/40",
+          userName: "User 2",
+          avatar: "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671142.jpg",
         },
-        media: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fletsenhance.io%2F&psig=AOvVaw2fTVzDNY-peGMlccLi2TnP&ust=1723038555052000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCNjUpvnA4IcDFQAAAAAdAAAAABAE",
+        media: "https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg",
         _id: "post2"
       },
 
@@ -27,9 +27,9 @@ const PostData = () => {
       description: "This is a sample post description 3.",
       owner: {
         userName: "User 3",
-        avatar: "https://via.placeholder.com/40",
+        avatar: "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671142.jpg",
       },
-      media: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fletsenhance.io%2F&psig=AOvVaw2fTVzDNY-peGMlccLi2TnP&ust=1723038555052000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCNjUpvnA4IcDFQAAAAAdAAAAABAE",
+      media: "https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg",
       _id: "post3"
     },
       // Add more posts as needed
