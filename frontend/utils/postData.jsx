@@ -7,7 +7,7 @@ const PostData = () => {
           userName: "John Doe",
           avatar: "https://via.placeholder.com/40",
         },
-        media: "https://via.placeholder.com/500x300",
+        media: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fletsenhance.io%2F&psig=AOvVaw2fTVzDNY-peGMlccLi2TnP&ust=1723038555052000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCNjUpvnA4IcDFQAAAAAdAAAAABAE",
        
         _id: "post1",
       },
@@ -18,7 +18,7 @@ const PostData = () => {
           userName: "Jane Smith",
           avatar: "https://via.placeholder.com/40",
         },
-        media: "https://via.placeholder.com/500x300",
+        media: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fletsenhance.io%2F&psig=AOvVaw2fTVzDNY-peGMlccLi2TnP&ust=1723038555052000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCNjUpvnA4IcDFQAAAAAdAAAAABAE",
         _id: "post2"
       },
 
@@ -29,7 +29,7 @@ const PostData = () => {
         userName: "User 3",
         avatar: "https://via.placeholder.com/40",
       },
-      media: "https://via.placeholder.com/500x300",
+      media: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fletsenhance.io%2F&psig=AOvVaw2fTVzDNY-peGMlccLi2TnP&ust=1723038555052000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCNjUpvnA4IcDFQAAAAAdAAAAABAE",
       _id: "post3"
     },
       // Add more posts as needed
