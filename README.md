@@ -72,8 +72,8 @@ This project aims to create a static post page using React that dynamically gene
     
     Copy code
     
-    `git clone <repository-url>
-    cd <repository-directory>` 
+    `git clone <https://github.com/wraith2009/Medial-Assignment.git>
+    ` 
     
 2.  *Setup the backend*
     
@@ -87,51 +87,29 @@ This project aims to create a static post page using React that dynamically gene
         
     -   Install dependencies:
         
-        sh
-        
-        Copy code
-        
         npm install 
         
     -   Create a .env file in the backend directory with the following content:
         
-        makefile
-        
-        Copy code
-        
-        PORT=3000 
+        PORT=4000 
         
     -   Start the backend server:
-        
-        sh
-        
-        Copy code
-        
         npm start 
         
 3.  *Setup the frontend*
     
     -   Navigate to the frontend directory:
         
-        sh
-        
-        Copy code
         
         cd frontend 
         
     -   Install dependencies:
         
-        sh
-        
-        Copy code
         
         npm install 
         
     -   Start the React development server:
         
-        sh
-        
-        Copy code
         
         npm start 
         
@@ -142,6 +120,26 @@ This project aims to create a static post page using React that dynamically gene
 -   Click on a post to navigate to its detailed view. The Open Graph image will be dynamically generated and included as a meta tag in the page's HTML.
 
 ## Explanation of the System
+    # How to Share a Post and Check the Meta Tag
+
+## Step 1: Click on the Share Button
+
+Click on the **Share** button to share the post. Here's an example of what the share button looks like:
+
+![Share Button](images/medial-assignment-image.png)
+
+## Step 2: Inspect the Browser and Check the Meta Tag
+
+Right-click on the page and select **Inspect** or press `Ctrl+Shift+I` (or `Cmd+Option+I` on Mac) to open the developer tools. Navigate to the **Elements** tab and look for the meta tag. Here's what you should see:
+
+![Inspect Meta Tag](images/medial-assignment-image23jpg.jpg)
+
+## Step 3: Preview the Open Graph Image
+
+Once you have confirmed the meta tag, you can see the preview of the Open Graph image (`og:image`) that is stored in the `public` folder of the backend. It should look like this:
+
+![OG Image Preview](images/medial-assignment-image2.jpg)
+
 
 ### OG Image Generation Process
 
