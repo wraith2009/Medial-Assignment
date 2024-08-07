@@ -25,7 +25,7 @@ const PostPage = () => {
     
     });
     
-    return `http://localhost:3000/api/generate-image?${params.toString()}`;
+    return `http://localhost:4000/api/generate-image?${params.toString()}`;
   };
 
   const fetchImageUrl = async () => {

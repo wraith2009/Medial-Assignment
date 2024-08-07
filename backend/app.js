@@ -77,7 +77,7 @@ app.get('/api/generate-image', async (req, res) => {
 
     await browser.close();
 
-    res.json({ imageUrl: `${req.protocol}://${req.get('host')}/og-image.png` });
+    res.json({ imageUrl: `http://localhost:4000/og-image.png` });
   } catch (error) {
     console.error('Error generating image:', error);
     res.status(500).json({ error: 'Failed to generate image' });
