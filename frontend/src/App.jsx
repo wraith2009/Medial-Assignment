@@ -2,6 +2,7 @@ import React from 'react';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import PostPage from './components/postPage';
+import './index.css';
 
 
 function Layout() {

@@ -1,14 +1,15 @@
+// HomePage.jsx
 import React from "react";
-import PostCard from "../../utils/PostCard";
-import PostData from "../../utils/postData";
+import PostCard from "./PostCard.jsx";
+import PostData from "./postData.jsx";
 
 const HomePage = () => {
   const posts = PostData();
 
   return (
-    <div className="flex flex-col bg-black w-full min-h-screen overflow-y-auto items-center no-scrollbar py-8">
-      {posts.map((post) => (
-        <div key={post._id} className="rounded-2xl bg-slate-300 p-1 mb-4 w-[520px]">
+    <div className="flex flex-col bg-[#0d1114] w-full min-h-screen overflow-y-auto items-center no-scrollbar py-8">
+      {posts.map((post, index) => (
+        <div key={post._id} className="rounded-2xl bg-[#13181d] p-1 mb-4">
           <PostCard {...post} />
         </div>
       ))}

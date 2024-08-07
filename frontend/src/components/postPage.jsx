@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import PostData from "../../utils/postData.jsx";
-import PostCard from "../../utils/PostCard.jsx";
+import PostData from "./postData.jsx";
+import PostCard from "./PostCard.jsx";
 import { Helmet } from "react-helmet";
 
 const PostPage = () => {
@@ -24,8 +24,8 @@ const PostPage = () => {
       username: post.owner.userName,
     
     });
-
-    return `http://localhost:4000/api/generate-image?${params.toString()}`;
+    
+    return `http://localhost:3000/api/generate-image?${params.toString()}`;
   };
 
   const fetchImageUrl = async () => {
@@ -40,7 +40,7 @@ const PostPage = () => {
   }, []);
 
   return (
-    <div className="post-page">
+    <div className="post-page flex flex-col bg-[#0d1114] w-full min-h-screen overflow-y-auto items-center no-scrollbar py-8">
       <Helmet>
         <meta property="og:image" content={imageUrl} />
       </Helmet>
