@@ -64,6 +64,7 @@ app.get('/api/generate-image', async (req, res) => {
   try {
     const browser = await puppeteer.launch({
       args: ['--no-sandbox', '--disable-setuid-sandbox'],
+      cacheDirectory: process.env.PUPPETEER_CACHE_DIR,  // Set the cache directory
     });
     const page = await browser.newPage();
 
