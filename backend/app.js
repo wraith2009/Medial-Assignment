@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
-import puppeteer from 'puppeteer'; // Use puppeteer instead of puppeteer-core
+import puppeteer from 'puppeteer';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import fs from 'fs';
@@ -64,7 +64,7 @@ app.get('/api/generate-image', async (req, res) => {
   try {
     const browser = await puppeteer.launch({
       args: ['--no-sandbox', '--disable-setuid-sandbox'],
-      cacheDirectory: process.env.PUPPETEER_CACHE_DIR,  // Set the cache directory
+      cacheDirectory: process.env.PUPPETEER_CACHE_DIR,  
     });
     const page = await browser.newPage();
 
